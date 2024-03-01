@@ -106,25 +106,25 @@ class Main extends PluginBase implements Listener{
 				$this->getEconomyProvider()->getMoney($sender, function(int|float $money) use($sender){
 					$price=$this->getConfig()->get("price");
 					if($money<$price){
-						$sender->sendMessage("§l§c• Bạn Không Đủ Tiền Để Sửa Vật Phẩm");
+						$sender->sendMessage("§l§c• You Dont Have Enough Money To Fix");
 						return;
 					}
 					$item=$sender->getInventory()->getItemInHand();
 					if(!$item instanceof Item){
-						$sender->sendMessage("§l§c• Vui Lòng Cầm Vật Phẩm Trên Tay");
+						$sender->sendMessage("§l§c• You Dont Have Item In Hand");
 						return;
 					}
 					if($item instanceof ItemBlock){
-						$sender->sendMessage("§l§c• Vui Lòng Cầm Dụng Cụ Hoặc Giáp Trên Tay");
+						$sender->sendMessage("§l§c• Your Item In Hand Is Not Tool Or Armor");
 						return;
 					}
 					if($item->getDamage()==0){
-						$sender->sendMessage("§l§c• Vật Phẩm Của Bạn Không Bị Hư Hại");
+						$sender->sendMessage("§l§c• Your Item Is Not Damaged");
 						return;
 					}
 					$this->getEconomyProvider()->takeMoney($sender, (int)($price));
 					$this->fixItemHand($sender);
-					$sender->sendMessage("§l§c•§a Sửa Vật Phẩm Thành Công");
+					$sender->sendMessage("§l§c•§a Fix Item Successfully");
 				});
 				break;
 				case 2:
@@ -149,30 +149,30 @@ class Main extends PluginBase implements Listener{
 						}
 					}
 					if($count==0){
-						$sender->sendMessage("§l§c• Bạn Không Có Vật Phẩm Nào Hư Hại");
+						$sender->sendMessage("§l§c• You Dont Have Any Item Damaged");
 						return;
 					}
 					$price=$this->getConfig()->get("price");
 					$totalprice=(int)($price)*(int)($count);
 					if($money<$totalprice){
-						$sender->sendMessage("§l§c• Bạn Không Đủ Tiền Để Sửa Hết Tất Cả Vật Phẩm, Bạn Cần§e ".$totalprice." Tiền§c Để Sửa");
+						$sender->sendMessage("§l§c• You Dont Have Enough Money To Fix All Item, You Need§e ".$totalprice." Money§c To Fix");
 						return;
 					}
 					$this->getEconomyProvider()->takeMoney($sender, (int)($totalprice));
 					$this->fixItemAll($sender);
-					$sender->sendMessage("§l§c•§a Bạn Đã Sửa§e ".$count." Vật Phẩm §aTrong Túi Đồ Của Bạn Với Giá§e ".$totalprice." Tiền§a Thành Công");
+					$sender->sendMessage("§l§c•§a You Fixed§e ".$count." Item §aIn Your Inventory With Price§e ".$totalprice." Money§a Successfully");
 				});
 				break;
 			}
 		});
-		$form->setTitle("§l§c♦§e Sửa Chữa Item §c♦");
+		$form->setTitle("§l§c♦§e Fix Item §c♦");
 		$this->getEconomyProvider()->getMoney($sender, function(int|float $money) use($sender, $form){
 			$price=$this->getConfig()->get("price");
-			$form->setContent("§l§c•§a Tiền Của Bạn:§e ".$money." Tiền\n§l§c•§a Giá Sửa Chữa Vật Phẩm:§e ".$price." Tiền");
+			$form->setContent("§l§c•§a Your Money:§e ".$money." Money\n§l§c•§a Price To Fix Item:§e ".$price." Money");
 		});
-		$form->addButton("§l§c•§9 Thoát §c•");
-		$form->addButton("§l§c•§9 Sửa Chữa Item Trên Tay §c•");
-		$form->addButton("§l§c•§9 Sửa Chữa Tất Cả Item §c•");
+		$form->addButton("§l§c•§9 Exit §c•");
+		$form->addButton("§l§c•§9 Fix Item In Hand §c•");
+		$form->addButton("§l§c•§9 Fix All Item §c•");
 		$form->sendToPlayer($sender);
 	}
 }
