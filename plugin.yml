@@ -5,6 +5,8 @@ version: 0.0.1
 author:
 - Kiên MC
 description: Plugin Fix Item Code By Kiên MC
+virions:
+- libPiggyEconomy
 commands:
    fixitem:
       description: "Open Menu Fix Item"
