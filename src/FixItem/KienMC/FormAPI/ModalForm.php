@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace KienMC\Mineral\FormAPI;
+namespace FixItem\KienMC\FormAPI;
 
 use pocketmine\form\FormValidationException;
 
