@@ -1,0 +1,25 @@
+name: FixItemUI
+main: FixItem\KienMC\Main
+api: 5.0.0
+version: 0.0.1
+author:
+- Kiên MC
+description: Plugin Fix Item Code By Kiên MC
+commands:
+   fixitem:
+      description: "Sửa Vật Phẩm"
+      permission: fixitem.cmd
+      aliases: ["suachua"]
+   fix:
+      description: "Sửa Vật Phẩm Miễn Phí"
+      permission: fix.cmd
+   fixall:
+      description: "Sửa Tất Cả Vật Phẩm Miễn Phí"
+      permission: fixall.cmd
+permissions:
+   fixitem.cmd:
+      default: true
+   fix.cmd:
+      default: op
+   fixall.cmd:
+      default: op
