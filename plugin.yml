@@ -7,14 +7,13 @@ author:
 description: Plugin Fix Item Code By Kiên MC
 commands:
    fixitem:
-      description: "Sửa Vật Phẩm"
+      description: "Open Menu Fix Item"
       permission: fixitem.cmd
-      aliases: ["suachua"]
    fix:
-      description: "Sửa Vật Phẩm Miễn Phí"
+      description: "Fix Item"
       permission: fix.cmd
    fixall:
-      description: "Sửa Tất Cả Vật Phẩm Miễn Phí"
+      description: "Fix All Item"
       permission: fixall.cmd
 permissions:
    fixitem.cmd:
