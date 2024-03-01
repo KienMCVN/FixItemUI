@@ -1,0 +1,6 @@
+economy:
+   provider: economyapi
+#Get Type Of The Economy ( economyapi or bedrockeconomy )
+
+price: 10000
+#Get Price For Fix Item
