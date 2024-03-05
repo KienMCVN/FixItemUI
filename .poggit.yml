@@ -3,7 +3,7 @@ build-by-default: true
 branches:
 - main
 projects:
-  FixItemUI-V0.0.1:
+  FixItemUI:
     path: ""
     libs:
     - src: DaPigGuy/libPiggyEconomy/libPiggyEconomy 
