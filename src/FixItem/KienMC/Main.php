@@ -118,7 +118,7 @@ class Main extends PluginBase implements Listener{
 						$sender->sendMessage("§l§c• Your Item In Hand Is Not Tool Or Armor");
 						return;
 					}
-					if($item->getDamage()==0){
+					if($item->getMeta()->getDurability()===0){
 						$sender->sendMessage("§l§c• Your Item Is Not Damaged");
 						return;
 					}
@@ -166,7 +166,7 @@ class Main extends PluginBase implements Listener{
 			}
 		});
 		$form->setTitle("§l§c♦§e Fix Item §c♦");
-		$this->getEconomyProvider()->getMoney($sender, function(int|float $money) use($sender, $form){
+		$this->getEconomyProvider()->getMoney($sender, function(int|float $money) use($form){
 			$price=$this->getConfig()->get("price");
 			$form->setContent("§l§c•§a Your Money:§e ".$money." Money\n§l§c•§a Price To Fix Item:§e ".$price." Money");
 		});
