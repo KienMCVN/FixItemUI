@@ -118,7 +118,7 @@ class Main extends PluginBase implements Listener{
 						$sender->sendMessage("§l§c• Your Item In Hand Is Not Tool Or Armor");
 						return;
 					}
-					if($item->getMeta()->getDurability()===0){
+					if($item->getNamedTag()->getShort("Damage")===0){
 						$sender->sendMessage("§l§c• Your Item Is Not Damaged");
 						return;
 					}
