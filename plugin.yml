@@ -3,7 +3,7 @@ main: FixItem\KienMC\Main
 api: 5.0.0
 version: 0.0.1
 author:
-- Kiên MC
+- KienDev
 description: Plugin Fix Item Code By Kiên MC
 virions:
 - libPiggyEconomy
