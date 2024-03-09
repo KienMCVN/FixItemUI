@@ -1,2 +1,2 @@
-# FixItemUI-V0.0.1
+# FixItemUI
 Plugin FixItemUI For Pocketmine MP 5
