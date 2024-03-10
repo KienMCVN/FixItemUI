@@ -5,6 +5,7 @@ branches:
 projects:
   FixItemUI:
     path: ""
+    icon: holding-wrench.png
     libs:
     - src: DaPigGuy/libPiggyEconomy/libPiggyEconomy 
       version: ^3.0.2
